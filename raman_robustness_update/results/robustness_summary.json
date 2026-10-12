@@ -1,0 +1,101 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "mean": {
+    "Acetate": {
+      "latent_variables": 17.0,
+      "rmsep_designed_test": 0.249,
+      "r2_designed_test": 0.83,
+      "rmsep_ecoli": 0.372,
+      "bias_ecoli": 0.121,
+      "r2_ecoli": -1.095,
+      "flagged99_ecoli": 1.0,
+      "rmsep_ecoli_flagged": 0.372,
+      "rmsep_ecoli_not_flagged": NaN,
+      "update_heldout_none": 0.407,
+      "update_heldout_weighted10": 0.327
+    },
+    "Glucose": {
+      "latent_variables": 10.4,
+      "rmsep_designed_test": 1.989,
+      "r2_designed_test": 0.901,
+      "rmsep_ecoli": 2.246,
+      "bias_ecoli": -1.432,
+      "r2_ecoli": -3.21,
+      "flagged99_ecoli": 0.597,
+      "rmsep_ecoli_flagged": 2.394,
+      "rmsep_ecoli_not_flagged": 1.092,
+      "update_heldout_none": 2.274,
+      "update_heldout_weighted10": 0.781
+    }
+  },
+  "sd": {
+    "Acetate": {
+      "latent_variables": 0.0,
+      "rmsep_designed_test": 0.016,
+      "r2_designed_test": 0.017,
+      "rmsep_ecoli": 0.113,
+      "bias_ecoli": 0.209,
+      "r2_ecoli": 1.397,
+      "flagged99_ecoli": 0.0,
+      "rmsep_ecoli_flagged": 0.113,
+      "rmsep_ecoli_not_flagged": NaN,
+      "update_heldout_none": 0.108,
+      "update_heldout_weighted10": 0.014
+    },
+    "Glucose": {
+      "latent_variables": 2.074,
+      "rmsep_designed_test": 0.096,
+      "r2_designed_test": 0.011,
+      "rmsep_ecoli": 1.668,
+      "bias_ecoli": 1.963,
+      "r2_ecoli": 4.918,
+      "flagged99_ecoli": 0.269,
+      "rmsep_ecoli_flagged": 1.786,
+      "rmsep_ecoli_not_flagged": 0.422,
+      "update_heldout_none": 1.696,
+      "update_heldout_weighted10": 0.231
+    }
+  },
+  "pipelines_chosen": {
+    "Acetate": [
+      "full_raw",
+      "full_raw",
+      "full_raw",
+      "full_raw",
+      "full_raw"
+    ],
+    "Glucose": [
+      "full_snv",
+      "full_snv",
+      "full_snv",
+      "full_snv",
+      "full_snv"
+    ]
+  },
+  "ecoli_train_only_mae_bootstrap": {
+    "Glucose": {
+      "mae": 0.222,
+      "ci95": [
+        0.172,
+        0.287
+      ],
+      "latent_variables": 8,
+      "test_samples": 61
+    },
+    "Acetate": {
+      "mae": 0.084,
+      "ci95": [
+        0.071,
+        0.097
+      ],
+      "latent_variables": 6,
+      "test_samples": 61
+    }
+  }
+}
