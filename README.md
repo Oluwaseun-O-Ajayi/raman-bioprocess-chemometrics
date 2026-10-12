@@ -4,9 +4,20 @@
 
 **The repository builds partial least squares (PLS) models that predict glucose and acetate from 785 nm Raman spectra, calibrated on 6,960 spectra of designed substrate mixtures and tested on 24 real E. coli cultivations. It covers the workflow of a process analytical technology (PAT) model: Raman preprocessing, model selection, independent validation, Hotelling's T² and Q residual monitoring, PCA, prediction intervals, calibration design, model updating with process samples, and a deployable model package.**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23310422.svg)](https://doi.org/10.5281/zenodo.23310422)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3+-f7931e.svg)](https://scikit-learn.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+## DOI and Archival Record
+
+This software is archived on Zenodo to support long-term preservation, reproducibility, and scholarly citation.
+
+**Current Version:** 0.1.1
+
+**DOI (v0.1.1):** https://doi.org/10.5281/zenodo.23310422
 
 ---
 
@@ -364,9 +375,25 @@ If you use this repository in research or teaching, please cite:
 Ajayi, O. O. (2026).
 
 Raman Bioprocess Chemometrics: PLS calibration, outlier monitoring, and model maintenance for Raman spectra of bioprocess samples
-(Version 0.1.0) [Computer software].
+(Version 0.1.1) [Computer software].
 
-GitHub. https://github.com/Oluwaseun-O-Ajayi/raman-bioprocess-chemometrics
+Zenodo.
+
+DOI: 10.5281/zenodo.23310422
+```
+
+### BibTeX
+
+```bibtex
+@software{raman_bioprocess_chemometrics_2026,
+  author = {Ajayi, Oluwaseun O.},
+  title = {Raman Bioprocess Chemometrics: PLS calibration, outlier monitoring, and model maintenance for Raman spectra of bioprocess samples},
+  year = {2026},
+  version = {0.1.1},
+  publisher = {Zenodo},
+  doi = {10.5281/zenodo.23310422},
+  url = {https://doi.org/10.5281/zenodo.23310422}
+}
 ```
 
 ---
