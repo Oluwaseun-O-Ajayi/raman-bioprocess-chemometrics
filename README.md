@@ -209,6 +209,21 @@ Values are mean ± standard deviation over 20 draws; training correlation was 0.
 
 Values are mean RMSEP in g/L over 20 random draws. With few process samples, the weighted update gave the best glucose model; with all 69, the local model was best. After the weighted 10-sample update, 19% of held-out E. coli spectra were flagged, down from 55%. Acetate in this process stayed near the limit of what these spectra resolve: no policy brought the error clearly below the spread of the reference values until 40 or more process samples were used.
 
+### Robustness Over Five Splits
+
+`scripts/robustness.py` repeats the headline results with five random sample-wise splits of the designed data, re-selecting preprocessing and latent variables each time (output in `results/robustness.csv` and `results/robustness_summary.json`).
+
+| Quantity | Glucose | Acetate |
+|---|---|---|
+| Designed test RMSEP (g/L) | 1.99 ± 0.10 (1.90 to 2.10) | 0.25 ± 0.02 (0.23 to 0.26) |
+| E. coli RMSEP (g/L) | 2.25 ± 1.67 (0.61 to 4.36) | 0.37 ± 0.11 (0.30 to 0.57) |
+| E. coli bias (g/L) | −1.43 ± 1.96 (−3.71 to 0.73) | 0.12 ± 0.21 (−0.07 to 0.44) |
+| E. coli spectra flagged at 99% | 60% ± 27% (26% to 88%) | 100% in every split |
+| Held-out RMSEP, designed calibration only (g/L) | 2.27 ± 1.70 | 0.41 ± 0.11 |
+| Held-out RMSEP, 10 samples weighted ×10 (g/L) | 0.78 ± 0.23 | 0.33 ± 0.01 |
+
+The designed-sample error barely moved, while the E. coli error and bias changed widely from split to split: the designed calibration extrapolates to the fermentation matrix, and how it extrapolates depends on which designed samples it was trained on. The flagged fraction rose with the E. coli error across splits, and the weighted 10-sample update reduced the glucose error in every split. With the source study's split, the bootstrap 95% interval for the PLS glucose MAE is 0.17 to 0.29 g/L, which contains the CNN's 0.27 g/L; for acetate it is 0.071 to 0.097 g/L, above the CNN's 0.06 g/L.
+
 ### Comparison with the Source Study
 
 Same split as the source study: 8 training, 8 validation, and 8 test cultivations (122 test spectra).
@@ -292,6 +307,7 @@ raman-bioprocess-chemometrics/
 ├── scripts/
 │   ├── download_data.py
 │   ├── run_analysis.py
+│   ├── robustness.py
 │   └── predict.py
 ├── tests/                # 14 unit tests on synthetic spectra
 ├── results/              # CSV tables and summary.json
@@ -324,6 +340,7 @@ pytest -q
 - `results/calibration_design.csv`: the design experiment, one row per draw
 - `results/model_update.csv`, `results/model_update_summary.csv`: the maintenance experiment
 - `results/summary.json`: headline numbers, data checks, and the comparison with the source study
+- `results/robustness.csv`, `results/robustness_summary.json`: results over five splits and bootstrap intervals
 - `figures/`: all figures shown above
 
 ---
