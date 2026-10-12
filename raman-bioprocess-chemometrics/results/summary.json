@@ -1,0 +1,159 @@
+{
+  "designed_spectra": 6960,
+  "designed_samples": 3433,
+  "designed_spectra_removed_saturated": 2,
+  "designed_split_spectra": {
+    "train": 4872,
+    "val": 1037,
+    "test": 1049
+  },
+  "ecoli_spectra": 379,
+  "ecoli_samples": 190,
+  "ecoli_spectra_invalid": 0,
+  "selected": {
+    "Glucose": {
+      "pipeline": "full_snv",
+      "latent_variables": 11,
+      "designed_range": [
+        0.0,
+        19.96073917
+      ],
+      "ecoli_range": [
+        0.0,
+        4.1411
+      ],
+      "ecoli_sd": 1.314,
+      "rmse_val": 1.875,
+      "rmsep_designed_test": 1.905,
+      "r2_designed_test": 0.914,
+      "rmsep_ecoli": 1.416,
+      "bias_ecoli": -1.117,
+      "r2_ecoli": -0.161,
+      "interval95_halfwidth": 3.517,
+      "coverage95_designed_test": 0.939,
+      "coverage95_ecoli": 0.989,
+      "t2_limit_99": 24.83,
+      "q_limit_99": 14.072,
+      "flagged99_designed_test": 0.035,
+      "flagged99_ecoli": 0.547,
+      "t2_above99_ecoli": 0.547,
+      "q_above99_ecoli": 0.035,
+      "rmsep_ecoli_flagged": 1.758,
+      "rmsep_ecoli_not_flagged": 0.833
+    },
+    "Acetate": {
+      "pipeline": "full_raw",
+      "latent_variables": 17,
+      "designed_range": [
+        0.0,
+        2.127543973958
+      ],
+      "ecoli_range": [
+        0.0,
+        1.59176
+      ],
+      "ecoli_sd": 0.266,
+      "rmse_val": 0.263,
+      "rmsep_designed_test": 0.225,
+      "r2_designed_test": 0.855,
+      "rmsep_ecoli": 0.312,
+      "bias_ecoli": -0.071,
+      "r2_ecoli": -0.373,
+      "interval95_halfwidth": 0.528,
+      "coverage95_designed_test": 0.965,
+      "coverage95_ecoli": 0.947,
+      "t2_limit_99": 33.6,
+      "q_limit_99": 2488782.3085,
+      "flagged99_designed_test": 0.094,
+      "flagged99_ecoli": 1.0,
+      "t2_above99_ecoli": 1.0,
+      "q_above99_ecoli": 0.781,
+      "rmsep_ecoli_flagged": 0.312,
+      "rmsep_ecoli_not_flagged": null
+    }
+  },
+  "calibration_design_test": {
+    "Glucose": {
+      "mean_increase": 0.083,
+      "percent_increase": 4.2,
+      "draws_worse": 18,
+      "draws": 20,
+      "wilcoxon_p": 0.0010166168212890625
+    },
+    "Acetate": {
+      "mean_increase": 0.075,
+      "percent_increase": 29.5,
+      "draws_worse": 20,
+      "draws": 20,
+      "wilcoxon_p": 1.9073486328125e-06
+    }
+  },
+  "source_protocol_comparison": {
+    "Glucose": {
+      "designed_only": {
+        "rmse": 1.385,
+        "mae": 1.152,
+        "latent_variables": 11
+      },
+      "ecoli_train_only": {
+        "rmse": 0.365,
+        "mae": 0.222,
+        "latent_variables": 8
+      },
+      "designed_plus_ecoli_train_x10": {
+        "rmse": 0.442,
+        "mae": 0.296,
+        "latent_variables": 10
+      },
+      "test_spectra": 122,
+      "test_sd": 1.391
+    },
+    "Acetate": {
+      "designed_only": {
+        "rmse": 0.296,
+        "mae": 0.238,
+        "latent_variables": 17
+      },
+      "ecoli_train_only": {
+        "rmse": 0.101,
+        "mae": 0.084,
+        "latent_variables": 6
+      },
+      "designed_plus_ecoli_train_x10": {
+        "rmse": 0.23,
+        "mae": 0.159,
+        "latent_variables": 6
+      },
+      "test_spectra": 122,
+      "test_sd": 0.126
+    }
+  },
+  "validation_vs_ecoli_rank_correlation": {
+    "Glucose": 0.94,
+    "Acetate": 0.14
+  },
+  "published_split": {
+    "Glucose": {
+      "published_test_rmsep": 2.067,
+      "published_test_spectra": 659,
+      "published_test_spectra_sharing_a_sample_with_train": 458,
+      "rmsep_sharing": 2.016,
+      "rmsep_not_sharing": 2.18
+    },
+    "Acetate": {
+      "published_test_rmsep": 0.255,
+      "published_test_spectra": 656,
+      "published_test_spectra_sharing_a_sample_with_train": 457,
+      "rmsep_sharing": 0.253,
+      "rmsep_not_sharing": 0.26
+    }
+  },
+  "pca_explained_variance": [
+    0.414,
+    0.229
+  ],
+  "signature_peak_800_1600": {
+    "Glucose": 1123.82,
+    "Acetate": 928.3
+  }
+}

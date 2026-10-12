@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Raman Bioprocess Chemometrics: PLS calibration, outlier monitoring, and model maintenance for Raman spectra of bioprocess samples"
+authors:
+  - family-names: "Ajayi"
+    given-names: "Oluwaseun O."
+    orcid: "https://orcid.org/0000-0003-0040-7217"
+    affiliation: "University of Georgia"
+version: "0.1.0"
+date-released: 2026-10-12
+license: MIT
+repository-code: "https://github.com/Oluwaseun-O-Ajayi/raman-bioprocess-chemometrics"
+keywords:
+  - Raman spectroscopy
+  - chemometrics
+  - partial least squares
+  - process analytical technology
+  - bioprocess monitoring
+  - multivariate statistical process control
+  - calibration design
+  - model maintenance
